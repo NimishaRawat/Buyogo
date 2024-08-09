@@ -1,0 +1,26 @@
+<div>
+    <h2>Step 2: Additional Information</h2>
+    <form>
+      <label>Organization Name:</label>
+      <input type="text" [(ngModel)]="step2Data.organizationName" (blur)="verifyOrganization()" name="organizationName" required />
+      <div *ngIf="errorMessage">{{ errorMessage }}</div>
+  
+      <label>Designation:</label>
+      <select [(ngModel)]="step2Data.designation" name="designation">
+        <option *ngFor="let option of designationOptions" [value]="option">{{ option }}</option>
+      </select>
+  
+      <label>Birth Date:</label>
+      <input type="date" [(ngModel)]="step2Data.birthDate" name="birthDate" />
+  
+      <label>City:</label>
+      <input type="text" [(ngModel)]="step2Data.city" name="city" />
+  
+      <label>Pincode:</label>
+      <input type="text" [(ngModel)]="step2Data.pincode" name="pincode" pattern="^[0-9]{6}$" />
+  
+      <button type="button" (click)="back()">Back</button>
+      <button type="button" (click)="submit()">Submit</button>
+    </form>
+  </div>
+  

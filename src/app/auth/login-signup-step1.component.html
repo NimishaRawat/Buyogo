@@ -1,0 +1,16 @@
+<div>
+    <h2>Step 1: User Information</h2>
+    <form>
+      <label>Name:</label>
+      <input type="text" [(ngModel)]="userData.name" name="name" required />
+      
+      <label>Email/Phone:</label>
+      <input type="text" [(ngModel)]="userData.emailOrPhone" name="emailOrPhone" required />
+      
+      <label>Create Password:</label>
+      <input type="password" [(ngModel)]="userData.password" name="password" required />
+      
+      <button type="button" (click)="continue()">Continue</button>
+    </form>
+  </div>
+  
